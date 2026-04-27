@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Love ❤️ Our Anniversary</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    width: 85%;
+    max-width: 750px;
+    background: rgba(255,255,255,0.92);
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+
+  h1 {
+    color: #e91e63;
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    color: #c2185b;
+    margin-top: 0;
+  }
+
+  p {
+    color: #555;
+    font-size: 18px;
+  }
+
+  .date {
+    font-weight: bold;
+    color: #d81b60;
+    margin: 10px 0;
+  }
+
+  .quote {
+    font-style: italic;
+    margin-top: 10px;
+    color: #6a1b9a;
+  }
+
+  .slideshow {
+    margin: 20px auto;
+    width: 100%;
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    animation: fade 12s infinite;
+    object-fit: cover;
+  }
+
+  .slides:nth-child(1) { animation-delay: 0s; }
+  .slides:nth-child(2) { animation-delay: 4s; }
+  .slides:nth-child(3) { animation-delay: 8s; }
+
+  @keyframes fade {
+    0%, 100% { opacity: 0; }
+    10%, 30% { opacity: 1; }
+    40%, 90% { opacity: 0; }
+  }
+
+  .heart {
+    position: absolute;
+    color: rgba(255,255,255,0.8);
+    font-size: 24px;
+    animation: float 6s linear infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .countdown {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #880e4f;
+    font-weight: bold;
+  }
+
+  .surprise {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #d50000;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: #e91e63;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Happy Anniversary ❤️</h1>
+  <h2>My Love 💕</h2>
+  <p>Every moment with you is a beautiful memory. Forever and always 💖</p>
+
+  <div class="date">May 11, 2026</div>
+
+  <div class="slideshow">
+    <img class="slides" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2">
+    <img class="slides" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
+    <img class="slides" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
+  </div>
+
+  <div class="quote">"I have found the one whom my soul loves." 💕</div>
+  <div class="quote">"You are my today and all of my tomorrows." 💖</div>
+
+  <button onclick="showSurprise()">Click for Surprise ❤️</button>
+
+  <div class="surprise" id="surpriseMessage">
+    💖 Ayya, you are the best thing that ever happened to me. <br>
+    I love you more than words can ever express. <br>
+    Forever yours... ❤️
+  </div>
+
+  
+
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 400);
+
+  function showSurprise() {
+    document.getElementById('surpriseMessage').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
